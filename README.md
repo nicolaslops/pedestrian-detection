@@ -1,68 +1,67 @@
-Aqui está o arquivo README.md formatado em Markdown para o seu projeto DETECTOR-DE-PEDESTRES:
+# PEDESTRIAN-DETECTION
 
-Markdown
-# DETECTOR-DE-PEDESTRES
+## About the Project
 
-## Sobre o Projeto
+This project consists of a computer vision application focused on pedestrian detection in video streams. Developed in Python, the `Walkers.py` script processes local video files (`walking.avi`) to detect people moving through the scene.
 
-Este projeto consiste em uma aplicação de visão computacional focada em monitoramento urbano e segurança inteligente. Desenvolvido em Python, o script `Walkers.py` realiza o processamento em lote de arquivos de vídeo locais (`walking.avi`) para identificar a presença de pessoas se deslocando pelo cenário em tempo real.
-
-Para realizar a classificação dos elementos visuais, o programa consome um classificador em cascata pré-treinado carregado a partir de uma estrutura de dados XML (`fullbody.xml`). O algoritmo analisa as matrizes de pixels de cada frame do vídeo em busca de padrões estruturais e proporções geométricas que correspondam à silhueta e ao corpo de seres humanos. Ao detectar um pedestre, o script renderiza dinamicamente um retângulo azul de marcação ao redor do alvo, adaptando e redimensionando a caixa delimitadora (*bounding box*) de forma proporcional ao tamanho e à distância dos pixels ocupados pela pessoa.
+To classify visual elements, the program uses a pre-trained Haar Cascade classifier loaded from an XML file (`fullbody.xml`). The algorithm analyzes the pixel matrices of each video frame to identify patterns and geometric features corresponding to the human body. When a pedestrian is detected, the script dynamically renders a bounding box around the target, adjusting its dimensions according to the detected person's position and size within the frame.
 
 ---
 
-## Funcionalidades
+## Features
 
-* Leitura e decodificação estruturada de fluxos de vídeo em formato digital (`.avi`).
-* Segmentação e análise de matrizes de pixels baseada em inteligência visual e filtros de textura.
-* Detecção automatizada de corpos inteiros utilizando classificadores Haar Cascade (`fullbody.xml`).
-* Renderização reativa de marcações geométricas (retângulos azuis) calibradas de acordo com a escala e posicionamento do pedestre na tela.
+* Structured reading and decoding of digital video streams in `.avi` format.
+* Frame-by-frame analysis of pixel matrices using computer vision techniques.
+* Automated full-body detection using a Haar Cascade classifier (`fullbody.xml`).
+* Real-time rendering of bounding boxes around detected pedestrians.
 
 ---
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 * **Python 3**
-* Biblioteca principal: `OpenCV` (módulo `cv2`)
-* Classificador de inteligência: Haar Cascade (`fullbody.xml`)
+* **OpenCV** (`cv2`)
+* **Haar Cascade** (`fullbody.xml`)
 
 ---
 
-## Objetivo
+## Objective
 
-O principal objetivo deste projeto é explorar técnicas de detecção de objetos e processamento digital de sinais de vídeo utilizando a biblioteca OpenCV. O foco técnico está na compreensão de algoritmos baseados em detecção de características texturais e aprendizado estatístico (Haar Cascade), aprendendo a carregar classificadores estruturados, manipular fluxos de quadros sequenciais em loops de repetição e desenhar elementos vetoriais informativos sobre matrizes de imagem em movimento.
-
----
-
-## Aprendizados
-
-Durante o desenvolvimento deste projeto, foram aplicados conceitos como:
-
-* Utilização da função `cv2.CascadeClassifier` para injetar arquivos de mapeamento XML externos com inteligência pré-configurada.
-* Implementação de estruturas de repetição (`while True`) para capturar e processar os frames de vídeo um a um usando `cv2.VideoCapture`.
-* Aplicação do método `detectMultiScale` para extrair as coordenadas cartesianas ($X, Y$) e as dimensões de largura ($W$) e altura ($H$) dos pedestres encontrados.
-* Uso de primitivas de desenho (`cv2.rectangle`) parametrizadas com canais de cores BGR (Azul) para envelopar as hitboxes de rastreamento com redimensionamento automático.
-* Otimização e liberação de recursos do sistema e memória de vídeo (`video.release()` e `cv2.destroyAllWindows()`) ao encerrar a execução do player.
+The main objective of this project is to explore object detection techniques and digital video processing using OpenCV. The technical focus is on understanding Haar Cascade-based detection, loading pre-trained classifiers, processing sequential video frames, and rendering visual detection results over moving image frames.
 
 ---
 
-## Como Executar
+## Learning Outcomes
 
-1. Certifique-se de ter o Python instalado em sua máquina.
-2. Instale a dependência do OpenCV através do seu terminal:
+During the development of this project, the following concepts were applied:
+
+* Using `cv2.CascadeClassifier` to load an external XML file containing a pre-trained detection classifier.
+* Implementing `while True` loops to capture and process video frames individually using `cv2.VideoCapture`.
+* Applying `detectMultiScale` to extract the Cartesian coordinates ($X, Y$) and dimensions ($W, H$) of detected pedestrians.
+* Using `cv2.rectangle` to render bounding boxes around detected objects.
+* Managing and releasing video-processing resources using `video.release()` and `cv2.destroyAllWindows()` when execution is complete.
+
+---
+
+## How to Run
+
+1. Make sure Python is installed on your machine.
+
+2. Install the OpenCV dependency:
+
 ```bash
 pip install opencv-python
 ```
 
-3. Certifique-se de que o arquivo de vídeo de testes (walking.avi) e o arquivo identificador (fullbody.xml) estejam na mesma pasta do script.
+3. Make sure `walking.avi` and `fullbody.xml` are located in the same directory as the script.
 
-4. cAcesse a pasta do projeto:
+4. Navigate to the project folder:
 
 ```bash
-cd DETECTOR-DE-PEDESTRES
+cd PEDESTRIAN-DETECTION
 ```
 
-5. Execute o script principal para iniciar a detecção:
+5. Run the main script:
 
 ```bash
 python Walkers.py
@@ -70,9 +69,10 @@ python Walkers.py
 
 ---
 
-## Estrutura do Projeto
+## Project Structure
+
 ```text
-DETECTOR-DE-PEDESTRES/
+PEDESTRIAN-DETECTION/
 │
 ├── fullbody.xml
 ├── Walkers.py
@@ -82,7 +82,8 @@ DETECTOR-DE-PEDESTRES/
 
 ---
 
-## Licença
-Este projeto foi desenvolvido exclusivamente para fins educacionais e de aprendizado.
+## License
 
-Desenvolvido como prática de visão computacional e inteligência de reconhecimento visual com Python, aplicando mapeamento de matrizes de pixels e renderização de hitboxes em fluxos de vídeo locais com OpenCV.
+This project was developed exclusively for educational and learning purposes.
+
+Developed as a hands-on exercise in computer vision and pedestrian detection with Python, applying pixel-matrix processing and bounding-box rendering to local video streams using OpenCV.

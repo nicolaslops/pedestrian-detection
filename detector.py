@@ -12,6 +12,8 @@ while True:
     
     # Leia o primeiro quadro
     ret, frame = cap.read()
+    if not ret:
+        break
 
     # Converta cada quadro em escala de cinza
     grey = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
