@@ -2,7 +2,7 @@
 
 ## About the Project
 
-This project consists of a computer vision application focused on pedestrian detection in video streams. Developed in Python, the `Walkers.py` script processes local video files (`walking.avi`) to detect people moving through the scene.
+This project consists of a computer vision application focused on pedestrian detection in video streams. Developed in Python, the `detector.py` script processes local video files (`walking.avi`) to detect people moving through the scene.
 
 To classify visual elements, the program uses a pre-trained Haar Cascade classifier loaded from an XML file (`fullbody.xml`). The algorithm analyzes the pixel matrices of each video frame to identify patterns and geometric features corresponding to the human body. When a pedestrian is detected, the script dynamically renders a bounding box around the target, adjusting its dimensions according to the detected person's position and size within the frame.
 
@@ -64,7 +64,7 @@ cd PEDESTRIAN-DETECTION
 5. Run the main script:
 
 ```bash
-python Walkers.py
+python detector.py
 ```
 
 ---
@@ -75,7 +75,7 @@ python Walkers.py
 PEDESTRIAN-DETECTION/
 │
 ├── fullbody.xml
-├── Walkers.py
+├── detector.py
 ├── walking.avi
 └── README.md
 ```
