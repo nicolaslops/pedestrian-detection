@@ -1,6 +1,5 @@
 import cv2
 
-
 # Crie nosso classificador de corpos
 body_classifier = cv2.CascadeClassifier("haarcascade_fullbody.xml")
 
